@@ -3,6 +3,7 @@ kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
   name: deny-from-other-namespaces
+  namespace: rocky-test
 spec:
   podSelector: {}
   ingress:
@@ -13,6 +14,7 @@ kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
   name: allow-webui
+  namespace: rocky-test
 spec:
   podSelector:
     matchLabels:
@@ -24,6 +26,7 @@ kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
   name: allow-db
+  namespace: rocky-test
 spec:
   podSelector:
     matchLabels:
